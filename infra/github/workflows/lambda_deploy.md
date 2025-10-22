@@ -1,10 +1,10 @@
-# 概要
+# GitHub Actions Lambda Deploy
 
-**AWS Lambda Deploy GitHub Action**は、GitHub Actions ワークフローの一部として AWS Lambda ファンクションのデプロイを自動化するツールです。zip ファイルアーカイブと Amazon ECR に保存されたコンテナイメージの両方に対応しています。
+## 概要
+
+GitHub Actionsを使用してAWS Lambdaのデプロイを自動化するツール。zipファイルとコンテナイメージの両方に対応。
 
 ## 基本的な使用方法
-
-### 標準的なデプロイ設定
 
 ```yaml
 name: Deploy to AWS Lambda
@@ -15,7 +15,7 @@ on:
 
 permissions:
   id-token: write # OIDC認証に必要
-  contents: read # リポジトリのチェックアウトに必要
+  contents: read
 
 jobs:
   deploy:
@@ -28,7 +28,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: us-east-1
 
       - name: Lambdaファンクションのデプロイ
         uses: aws-actions/aws-lambda-deploy@v1.1.0
@@ -39,33 +39,30 @@ jobs:
           runtime: nodejs22.x
 ```
 
-## デプロイメント方法
+## Zipデプロイ
 
-### 1. Zip ファイルデプロイ（デフォルト）
+必須パラメータ:
 
-必須パラメータ：
-
-- `function-name`: Lambda ファンクション名
+- `function-name`: Lambda関数名
 - `code-artifacts-dir`: コード成果物ディレクトリのパス
-- `handler`: ファンクションハンドラーメソッド
-- `runtime`: ファンクションランタイム識別子
+- `handler`: 関数ハンドラーメソッド
+- `runtime`: 関数ランタイム識別子
 
-### 2. コンテナイメージデプロイ
-
-必須パラメータ：
-
-- `function-name`: Lambda ファンクション名
-- `package-type`: `Image`に設定
-- `image-uri`: Amazon ECR のコンテナイメージ URI
-
-## 特殊な機能
-
-### S3 デプロイメント方法
-
-zip ファイルデプロイ用の代替方法として、コード成果物を S3 に保存できます：
+## コンテナイメージデプロイ
 
 ```yaml
-- name: S3経由でLambdaファンクションをデプロイ
+- name: コンテナイメージでデプロイ
+  uses: aws-actions/aws-lambda-deploy@v1.1.0
+  with:
+    function-name: my-function-name
+    package-type: Image
+    image-uri: 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-repo:latest
+```
+
+## S3経由のデプロイ
+
+```yaml
+- name: S3経由でデプロイ
   uses: aws-actions/aws-lambda-deploy@v1.1.0
   with:
     function-name: my-function-name
@@ -73,9 +70,7 @@ zip ファイルデプロイ用の代替方法として、コード成果物を 
     s3-bucket: my-s3-bucket
 ```
 
-### ドライランモード
-
-実際の変更を行わずにパラメータと権限を検証：
+## ドライランモード
 
 ```yaml
 - name: ドライランモードでデプロイ
@@ -86,15 +81,9 @@ zip ファイルデプロイ用の代替方法として、コード成果物を 
     dry-run: true
 ```
 
-## 認証とセキュリティ
+## 必要な権限
 
-### OIDC 認証（推奨）
-
-長期間有効な GitHub シークレットとして AWS 認証情報を保存する代わりに、OpenID Connect（OIDC）を使用することを強く推奨しています。
-
-### 必要な権限
-
-最小限必要な IAM 権限：
+最小限必要なIAM権限:
 
 - `lambda:GetFunctionConfiguration`
 - `lambda:CreateFunction`
@@ -103,14 +92,15 @@ zip ファイルデプロイ用の代替方法として、コード成果物を 
 - `lambda:PublishVersion`
 - `iam:PassRole`
 
-コンテナイメージデプロイの場合は、追加で ECR 権限も必要です。
+コンテナイメージの場合は追加でECR権限も必要。
 
 ## 主要な利点
 
-1. **自動化**: GitHub Actions ワークフローに統合して Lambda デプロイを自動化
-2. **柔軟性**: zip ファイルとコンテナイメージの両方に対応
-3. **設定管理**: ファンクションの設定も自動で更新
-4. **安全性**: ドライランモードでテスト可能
-5. **セキュリティ**: OIDC 認証対応で安全な認証
+- **自動化**: GitHub Actionsワークフローに統合
+- **柔軟性**: zipとコンテナイメージ両対応
+- **セキュリティ**: OIDC認証対応
+- **ドライラン**: 本番実行前にテスト可能
 
-このアクションを使用することで、Lambda ファンクションのデプロイプロセスを大幅に簡素化し、CI/CD パイプラインに組み込むことができます。
+## 参考リンク
+
+- GitHub Action: https://github.com/aws-actions/aws-lambda-deploy
