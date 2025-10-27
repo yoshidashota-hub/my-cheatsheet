@@ -992,3 +992,19 @@ npx prisma migrate reset
 - [Prisma Examples](https://github.com/prisma/prisma-examples)
 - [Prisma Schema Reference](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
 - [Prisma Client API Reference](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference)
+
+## 関連ガイド
+
+### フロントエンド統合
+- [Next.js App Router ガイド](../../front/framework/nextjs/app_router_guide.md) - Next.jsでのPrisma使用
+- [tRPC ガイド](../api/trpc_guide.md) - Prismaとの型安全な統合
+
+### データベース
+- [PostgreSQL ガイド](../../database/postgresql/postgresql_guide.md) - PostgreSQL基礎
+- [Drizzle ガイド](./drizzle_guide.md) - 代替ORM
+
+### バリデーション
+- [Zod ガイド](../validation/zod_guide.md) - スキーマバリデーション
+
+### 認証
+- [NextAuth.js ガイド](../../auth/nextauth_guide.md) - PrismaAdapter使用

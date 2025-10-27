@@ -88,3 +88,18 @@ function CreateUser() {
 ## 参考リンク
 
 - 公式ドキュメント: https://tanstack.com/query/latest
+
+## 関連ガイド
+
+### フロントエンド
+- [Next.js App Router ガイド](../../framework/nextjs/app_router_guide.md) - TanStack Query with Next.js
+- [React Server Components ガイド](../../framework/react/server_components_guide.md) - RSCとの組み合わせ
+- [Zustand ガイド](../../state/zustand_guide.md) - グローバル状態管理
+
+### バックエンド統合
+- [tRPC ガイド](../../../backend/api/trpc_guide.md) - 型安全なAPI呼び出し
+- [REST API 設計ガイド](../../../backend/api/rest_api_design_guide.md) - REST APIの設計
+
+### テスト
+- [Vitest ガイド](../../../tools/testing/vitest_guide.md) - TanStack Queryのテスト
+- [Testing Library ガイド](../../../tools/testing/testing_library_guide.md) - Reactコンポーネントのテスト

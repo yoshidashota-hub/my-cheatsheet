@@ -858,3 +858,20 @@ export const createCrudRouter = <T extends { id: string }>(
 - [tRPC Examples](https://github.com/trpc/trpc/tree/main/examples)
 - [Next.js with tRPC](https://trpc.io/docs/nextjs)
 - [React Query Documentation](https://tanstack.com/query/latest)
+
+## 関連ガイド
+
+### フロントエンド
+- [Next.js App Router ガイド](../../front/framework/nextjs/app_router_guide.md) - Next.jsでのtRPC統合
+- [TanStack Query ガイド](../../front/library/tanstack/tanstack_query.md) - データフェッチング・キャッシング
+- [React Server Components ガイド](../../front/framework/react/server_components_guide.md) - RSCとの組み合わせ
+
+### バリデーション・ORM
+- [Zod ガイド](../validation/zod_guide.md) - スキーマバリデーション
+- [Prisma ガイド](../orm/prisma_guide.md) - データベースORM
+
+### 認証
+- [NextAuth.js ガイド](../../auth/nextauth_guide.md) - Next.js向け認証
+
+### テスト
+- [Vitest ガイド](../../tools/testing/vitest_guide.md) - tRPCエンドポイントのテスト

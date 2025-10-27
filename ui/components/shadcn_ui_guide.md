@@ -989,3 +989,16 @@ export default function DataTable({ data }: { data: User[] }) {
 - [Radix UI](https://www.radix-ui.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui GitHub](https://github.com/shadcn-ui/ui)
+
+## 関連ガイド
+
+### フロントエンド
+- [Next.js App Router ガイド](../../front/framework/nextjs/app_router_guide.md) - Next.jsでのshadcn/ui使用
+- [React Hook Form ガイド](../../front/library/react-hook-form_guide.md) - フォーム管理
+
+### UI・スタイリング
+- [Tailwind CSS ガイド](../css/tailwind_guide.md) - スタイリングの基盤
+- [TanStack Table ガイド](../../front/library/tanstack/tanstack_table.md) - データテーブル実装
+
+### バリデーション
+- [Zod ガイド](../../backend/validation/zod_guide.md) - フォームバリデーション

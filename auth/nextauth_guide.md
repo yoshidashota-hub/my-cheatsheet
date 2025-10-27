@@ -382,3 +382,15 @@ export default async function SignInPage() {
 
 - [NextAuth.js 公式ドキュメント](https://next-auth.js.org/)
 - [Auth.js (v5)](https://authjs.dev/)
+
+## 関連ガイド
+
+### フロントエンド
+- [Next.js App Router ガイド](../front/framework/nextjs/app_router_guide.md) - Next.jsでのNextAuth使用
+
+### データベース・ORM
+- [Prisma ガイド](../backend/orm/prisma_guide.md) - PrismaAdapter使用
+- [PostgreSQL ガイド](../database/postgresql/postgresql_guide.md) - セッションストレージ
+
+### 代替認証サービス
+- [AWS Cognito ガイド](./aws-cognito/aws_cognito_guide.md) - AWSマネージド認証

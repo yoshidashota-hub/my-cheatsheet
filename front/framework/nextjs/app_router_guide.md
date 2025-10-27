@@ -784,3 +784,30 @@ const secretKey = process.env.SECRET_KEY;
 - [Next.js App Router 公式ドキュメント](https://nextjs.org/docs/app)
 - [React Server Components](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
 - [Next.js Examples](https://github.com/vercel/next.js/tree/canary/examples)
+
+## 関連ガイド
+
+### フロントエンド
+- [React Server Components ガイド](../react/server_components_guide.md) - RSCの詳細な実装方法
+- [TanStack Query ガイド](../../library/tanstack/tanstack_query.md) - データフェッチング・キャッシング
+- [Vite ガイド](../../build/vite_guide.md) - ビルドツール
+
+### UI・スタイリング
+- [Tailwind CSS ガイド](../../../ui/css/tailwind_guide.md) - Next.jsでのTailwind設定
+- [shadcn/ui ガイド](../../../ui/components/shadcn_ui_guide.md) - Next.js向けUIコンポーネント
+
+### バックエンド統合
+- [tRPC ガイド](../../../backend/api/trpc_guide.md) - Next.jsとの型安全な統合
+- [Prisma ガイド](../../../backend/orm/prisma_guide.md) - データベースORM
+- [Zod ガイド](../../../backend/validation/zod_guide.md) - バリデーション
+
+### 認証
+- [NextAuth.js ガイド](../../../auth/nextauth_guide.md) - Next.js向け認証
+
+### デプロイ・インフラ
+- [Vercel/Netlify ガイド](../../../infra/deploy/vercel_netlify_guide.md) - Next.jsのデプロイ
+- [Docker ガイド](../../../infra/docker/docker_guide.md) - コンテナ化
+
+### テスト
+- [Vitest ガイド](../../../tools/testing/vitest_guide.md) - ユニットテスト
+- [Playwright ガイド](../../../tools/testing/playwright_guide.md) - E2Eテスト

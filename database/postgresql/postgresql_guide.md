@@ -936,3 +936,16 @@ async function transferMoney(fromId: number, toId: number, amount: number) {
 - [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
 - [node-postgres Documentation](https://node-postgres.com/)
 - [Prisma with PostgreSQL](https://www.prisma.io/docs/concepts/database-connectors/postgresql)
+
+## 関連ガイド
+
+### ORM
+- [Prisma ガイド](../../backend/orm/prisma_guide.md) - PostgreSQL向けORM
+- [Drizzle ガイド](../../backend/orm/drizzle_guide.md) - 軽量ORM
+
+### フロントエンド統合
+- [Next.js App Router ガイド](../../front/framework/nextjs/app_router_guide.md) - Next.jsでのPostgreSQL使用
+
+### その他データベース
+- [MongoDB ガイド](../nosql/mongodb_guide.md) - NoSQL代替
+- [Redis ガイド](../redis/redis_guide.md) - キャッシュ層

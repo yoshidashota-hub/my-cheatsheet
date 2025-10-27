@@ -890,3 +890,17 @@ describe('API Tests', () => {
 - [Hono GitHub](https://github.com/honojs/hono)
 - [Hono Examples](https://github.com/honojs/examples)
 - [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/)
+
+## 関連ガイド
+
+### インフラ・デプロイ
+- [Cloudflare Workers ガイド](../../infra/edge/cloudflare_workers_guide.md) - Honoのデプロイ先
+
+### バリデーション
+- [Zod ガイド](../validation/zod_guide.md) - リクエストバリデーション
+
+### データベース
+- [Prisma ガイド](../orm/prisma_guide.md) - データベースORM
+
+### テスト
+- [Vitest ガイド](../../tools/testing/vitest_guide.md) - Honoアプリのテスト
